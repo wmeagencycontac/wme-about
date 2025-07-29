@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Contact - WME</title>
+    <link rel="stylesheet" href="https://www.wmeagency.com/app/themes/wme/public/styles/app.css?id=986dbab38c46a93bb53ccd60848d2ca5" type="text/css" media="all">
+    <script type="text/javascript" src="https://www.wmeagency.com/wp/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+    <style>
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        .submit-btn {
+            background: #000;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background: #333;
+        }
+        .submit-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .message {
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body class="wp-singular page-template-default page wp-embed-responsive wp-theme-wme page-contact">
+    <div id="app">
+        <header class="header">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg">
+                    <a class="navbar-brand" href="/">
+                        <svg width="99" height="18" viewBox="0 0 99 18" class="header__logo" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M21.2482 11.0638H21.0288L18.3956 7.10548V6.91081L23.0403 0H18.7979L16.4573 3.69874H16.2379L13.8607 0H9.61839L14.263 6.91081V7.10548L11.6298 11.0638H11.4104L4.27891 0H0L11.4104 17.2932H11.6298L16.2379 10.2202H16.4573L21.0288 17.2932H21.2482L32.6587 0H28.3797L21.2482 11.0638ZM53.541 11.3558H53.3216L44.8735 0H39.8631V17.2932H43.5569V4.50987H43.7763L53.3216 17.2932H53.541L63.1228 4.50987H63.3423V17.2932H67.036V0H61.9891L53.541 11.3558ZM98.9985 3.27696H81.0783L80.932 3.40674V6.84592L81.0783 7.00815H95.4145V10.2851H81.0783L80.932 10.4473V13.8541L81.0783 14.0163H98.9985V17.2932H77.2383V0H98.9985V3.27696Z" />
+                        </svg>
+                    </a>
+                    <div class="collapse navbar-collapse justify-content-end">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="/about" class="nav-link">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/expertise" class="nav-link">Expertise</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a href="/contact" class="nav-link">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main">
+            <section class="hero -simple">
+                <div class="container">
+                    <div class="hero__content">
+                        <h1 class="hero__content-sub-title">Contact Us</h1>
+                    </div>
+                </div>
+            </section>
+
+            <div class="container" style="padding: 4rem 0;">
+                <div class="contact-form">
+                    <h2>Get in Touch</h2>
+                    <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                    
+                    <div id="message-container"></div>
+                    
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company/Organization</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="expertise">Area of Interest</label>
+                            <select id="expertise" name="expertise">
+                                <option value="">Select an area</option>
+                                <option value="acting-talent">Acting Talent</option>
+                                <option value="television">Television</option>
+                                <option value="motion-picture">Motion Picture</option>
+                                <option value="wme-independent">WME Independent</option>
+                                <option value="fashion">Fashion</option>
+                                <option value="sports">Sports</option>
+                                <option value="digital">Digital</option>
+                                <option value="theater">Theater</option>
+                                <option value="music">Music</option>
+                                <option value="comedy">Comedy</option>
+                                <option value="books-literary-media">Books & Literary Media</option>
+                                <option value="impact">Impact, Inclusion & Advocacy</option>
+                                <option value="brands">Brands</option>
+                                <option value="production">Production</option>
+                                <option value="speaking">Speaking</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" required placeholder="Tell us about your inquiry..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn" id="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__social">
+                <div class="footer__social-links">
+                    <span class="footer__social-links-title">Follow Us:</span>
+                    <a href="https://www.instagram.com/wme/" target="_blank">instagram</a>
+                    <a href="https://www.tiktok.com/@wme" target="_blank">Tik Tok</a>
+                    <a href="https://www.linkedin.com/company/william-morris-endeavor" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+            <hr/>
+            <div class="footer__legal">
+                <div class="container-fluid">
+                    <div class="footer__copyright">
+                        <p>© 2025 William Morris Endeavor Entertainment, LLC. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submit-btn');
+            const messageContainer = document.getElementById('message-container');
+            
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
+            // Clear previous messages
+            messageContainer.innerHTML = '';
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    messageContainer.innerHTML = `<div class="message success">${result.message}</div>`;
+                    this.reset(); // Clear form
+                } else {
+                    messageContainer.innerHTML = `<div class="message error">${result.message}</div>`;
+                }
+            } catch (error) {
+                messageContainer.innerHTML = `<div class="message error">Sorry, there was an error sending your message. Please try again later.</div>`;
+            }
+            
+            // Re-enable submit button
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+            
+            // Scroll to message
+            messageContainer.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
